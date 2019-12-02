@@ -1,0 +1,90 @@
+{
+    "name": "skr-jp-word-handler",
+    "displayName": "skr Jp Word Handler",
+    "description": "Japanese word handling like Sakura Editor and cursor jump smartly by word",
+    "version": "0.0.1",
+    "publisher": "lowpolysnow",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/lowpolysnow/skr-jp-word-handler.git"
+    },
+    "engines": {
+        "vscode": "^1.22.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "extensionKind": "ui",
+    "license": "Zlib",
+    "activationEvents": [
+        "onCommand:skrJpWordHandler.moveWordPartLeft",
+        "onCommand:skrJpWordHandler.moveWordPartRight",
+        "onCommand:skrJpWordHandler.moveWordPartLeftSelect",
+        "onCommand:skrJpWordHandler.moveWordPartRightSelect",
+        "onCommand:skrJpWordHandler.deleteWordPartLeft",
+        "onCommand:skrJpWordHandler.deleteWordPartRight"
+    ],
+    "main": "./out/extension",
+    "contributes": {
+        "keybindings": [
+            {
+                "command": "skrJpWordHandler.moveWordPartLeft",
+                "key": "ctrl+left",
+                "mac": "cmd+left",
+                "when": "textInputFocus"
+            },
+            {
+                "command": "skrJpWordHandler.moveWordPartRight",
+                "key": "ctrl+right",
+                "mac": "cmd+right",
+                "when": "textInputFocus"
+            },
+            {
+                "command": "skrJpWordHandler.moveWordPartLeftSelect",
+                "key": "ctrl+shift+left",
+                "mac": "cmd+shift+left",
+                "when": "textInputFocus"
+            },
+            {
+                "command": "skrJpWordHandler.moveWordPartRightSelect",
+                "key": "ctrl+shift+right",
+                "mac": "cmd+shift+right",
+                "when": "textInputFocus"
+            },
+            {
+                "command": "skrJpWordHandler.deleteWordPartLeft",
+                "key": "ctrl+backspace",
+                "mac": "ctrl+backspace",
+                "when": "textInputFocus && !editorReadonly"
+            },
+            {
+                "command": "skrJpWordHandler.deleteWordPartRight",
+                "key": "ctrl+delete",
+                "mac": "ctrl+delete",
+                "when": "textInputFocus && !editorReadonly"
+            }
+        ]
+    },
+    "scripts": {
+        "compile": "tsc -p ./",
+        "lint": "node ./node_modules/tslint/bin/tslint -p ./",
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "test": "npm run compile && node ./node_modules/vscode/bin/test",
+        "vscode:prepublish": "npm run compile",
+        "watch": "tsc -watch -p ./"
+    },
+    "devDependencies": {
+        "@types/bluebird": "^3.5.24",
+        "@types/glob": "^7.1.1",
+        "@types/mocha": "^2.2.42",
+        "@types/node": "^8.10.30",
+        "bluebird": "^3.5.3",
+        "decache": "^4.5.1",
+        "glob": "^7.1.6",
+        "istanbul": "^0.4.5",
+        "remap-istanbul": "^0.13.0",
+        "tslint": "^5.11.0",
+        "typescript": "^2.9.2",
+        "vscode": "^1.1.34"
+    }
+}

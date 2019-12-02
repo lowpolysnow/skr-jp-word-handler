@@ -1,0 +1,7 @@
+out
+node_modules
+.vscode-test/
+*.vsix
+skr-jp-word-handler.code-workspace
+package-lock.json
+coverage
